@@ -1,6 +1,6 @@
 $(function() {
     getUserInfo()
-    console.log(localStorage.getItem('token'));
+    // console.log(localStorage.getItem('token'));
     //
     const layer = layui.layer
     const btnOut = document.querySelector('#btnOut');
@@ -32,7 +32,6 @@ function getUserInfo() {
             if(res.status !==0) {
                 return layer.msg(res.message);
             }
-            console.log(res);
             //调用渲染用户头像的方法
             randerAvatar(res.data)
          },
@@ -74,7 +73,6 @@ function randerAvatar(user) {
         });
         text_avatars.forEach(value => {
             value.innerHTML = first
-            console.log(value);
         });
      }
 }
